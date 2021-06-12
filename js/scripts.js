@@ -38,23 +38,28 @@ window.onload = reset;
     try {
      const res = await axios.post("http://localhost:5000/run", payload);
      var result;
+     console.log(res)
      console.log(res.data.statusCode)
      if(res.data.statusCode==4)
      {
+
      	result=res.data.data.run_status.output_html
+     	$("#output").html(result)
      	$("#memory").append("<b>Memory Used    :  </b>"+res.data.data.run_status.memory_used)
-     	  $("#time").append("<b>Execution Time :  </b>"+res.data.data.run_status.time_used)
+     	$("#time").append("<b>Execution Time :  </b>"+res.data.data.run_status.time_used)
      }
      else if(res.data.statusCode==0 || res.data.statusCode==1)
      {
      	result=res.data.data.compile_status
+     	$("#output").html(result)
+     	console.log(result)
      }
      else
      {
-     	result=res.data
+     	$("#output").html('<b style="color:red">Run time Error...!</b>')
      	console.log(result)
      }
-     $("#output").html(result)
+     
      // $("#memory").text('new-dynamic-text')
      // console.log(data)
     } catch (error) {
@@ -97,7 +102,7 @@ function changeLanguage()
 	var lang = l.value;
 	var lang1;
 	var text;
-	if(lang=='py')
+	if(lang=='python')
 	{
 		lang1='ace/mode/python'
 		text=`# Online Python compiler (interpreter) to run Python online.

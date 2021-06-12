@@ -36,7 +36,7 @@ window.onload = reset;
       input
     };
     try {
-     const res = await axios.post("http://localhost:5000/run", payload);
+     const res = await axios.post("https://online-compiler-backend.herokuapp.com/run", payload);
      var result;
      console.log(res)
      console.log(res.data.statusCode)

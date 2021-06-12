@@ -52,11 +52,11 @@ textarea {
 	#demo{
 		display:inline-flex;
 		flex-direction: column;
-		color: red;
+		
 	}
 	.selects{
 		display: block;
-		color: red;
+		
 	}
 	#selLang
 	{
@@ -69,11 +69,11 @@ textarea {
 	#demo{
 		display:inline-flex;
 		flex-direction: column;
-		color: red;
+		
 	}
 	.selects{
 		display: block;
-		color: red;
+		
 	}
 	#selLang
 	{

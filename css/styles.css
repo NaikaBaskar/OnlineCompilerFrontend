@@ -6,7 +6,8 @@
 
 .container-fluid h1{
 	margin-bottom: 20px;
-	color: #4682B4;
+	/*color: #4682B4;*/
+	color: #17a2b8;
 	font-weight: bold;
 }
 
@@ -46,6 +47,27 @@ textarea {
 	margin-left: 20px;
 	width:125px;
 }
+/*0C4111
+4F6E72
+408665*/
+
+.btn {
+  background-color:#17a2b8; /* Blue background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 4px 10px; /* Some padding */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  margin-left: 1px;
+  margin-top: -5px;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color:#1777b8;
+   /*background-color:#4F6E72;*/
+}
+
 
 @media screen and (max-width:615px)
 {

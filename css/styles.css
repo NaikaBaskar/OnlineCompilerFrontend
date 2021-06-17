@@ -28,9 +28,7 @@ body
 	flex-direction: row;
 
 }
-.memtime p{
 
-}
 textarea {
     display: block;
     width: 100%;
@@ -109,6 +107,16 @@ textarea {
 	#selLang
 	{
 		margin-left: 0px;
+	}
+	.memtime
+	{
+		margin: 5px;
+		display: flex;
+		padding: 5px;
+		color: white;
+		font-size: 14px;
+		flex-direction: row;
+
 	}
 }
 

@@ -10,12 +10,15 @@
 	<!-- <script src="js/scripts.js"></script> -->
 </head>
 <body>
-	<div class="container-fluid">
+	<div class="loadingbar">
+		<img src="images/loadingbar1.gif" class="loadingbar">
+	</div>
+	<div id="page" class="container-fluid" >   <!-- style="background-color: black;" -->
 		<br><br>
 		<h1 class="text-center">ONLINE COMPILER</h1>
 		<div class="row">
 			<div class="col-md-6 col-sm-12">
-				<div class="card" >
+				<div class="card">   <!-- style="background-color: black;" -->
 					<div class="card-header">
 						<div class="float-left">
 							<h3 class="text-info mb-3" style="text-align: center;">
@@ -23,7 +26,7 @@
 							</h3>
 						   <div class="selects">
 						   	<label for="language"  id="selLang">Language:</label>
-							<select name="language" onchange="changeLanguage()" id="language">
+							<select name="language"  onfocus="check()" id="language">
 							  <option value="c" selected="selected">C</option>
 							  <option value="cpp">C++</option>
 							  <option value="python">Python</option>
@@ -67,25 +70,25 @@
 			</div>
 			<div class="col-md-6 col-sm-12">
 				<div class="card" style="min-height: 25vh;">
-					<div class="card-header">
+					<div class="card-header">    <!-- style="background-color: black;" -->
 						<h3 class="text-info">
 								Input Screen 
 						</h3>
 
 					</div>
-					<div class="card-body" id="input">
+					<div class="card-body" id="input" >  <!-- style="background-color: black;" -->
 						<textarea  id="ip" placeholder="Enter your input here (if any)"></textarea>
 					</div>
 				</div>
 				<br>
 				<div class="card" style="min-height: 70vh;">
-					<div class="card-header">
+					<div class="card-header">  <!-- style="background-color: black;" -->    
 						<h3 class="text-info">
 								Output Screen
 						</h3>
 
 					</div>
-					<div class="card-body" id="output">
+					<div class="card-body" id="output">  <!-- style="background-color: black;" -->
 						
 					</div>
 					

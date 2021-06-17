@@ -13,7 +13,7 @@ int main() {
     return 0;
 }`)
 
-window.onload = reset;
+window.onload = refresh;
       //  var e1=ace.edit('output');
       // e1.getSession().setMode('ace/mode/c_cpp')  //language set
       // e1.setTheme('ace/theme/twilight') 
@@ -21,13 +21,15 @@ window.onload = reset;
 
       $(document).ready(function(){
       	$(document).on('click',"#run",async function(){
+
       	$("#output").html(" ")
       	$("#memory").text("")
 	    $("#time").text("")
       	var code=e.getValue();
       	var lan = document.getElementById("language");
 	    var language = lan.value;
-
+	    $("#page").hide();
+	    $(".loadingbar").show();
 	    var input=$("#ip").val()
 
     const payload = {
@@ -40,6 +42,9 @@ window.onload = reset;
      var result;
      console.log(res)
      console.log(res.data.statusCode)
+     $(".loadingbar").hide();
+     $("#page").show();
+
      if(res.data.statusCode==4)
      {
 
@@ -82,6 +87,13 @@ window.onload = reset;
       	})
       
       })
+// var sel = $("#language");
+//  var l1=sel.val();
+//  sel.change(function(){
+//      alert(sel.value())
+//      alert(l1)
+//   });
+// });      
 
 $(document).on('click',"#clear",async function(){
   reset()
@@ -102,6 +114,7 @@ function changeLanguage()
 	var lang = l.value;
 	var lang1;
 	var text;
+	// $("#language").val('python');
 	if(lang=='python')
 	{
 		lang1='ace/mode/python'
@@ -150,12 +163,52 @@ int main() {
 
 }
 
+function refresh()
+{
+	
+		$('#ip').val("");
+		$("#output").html(" ")
+		$("#memory").text("")
+		$("#time").text("")
+		$("#language").val('c')
+		e.setValue(`// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    // Write C code here
+    printf("Hello world");
+    
+    return 0;
+}`)
+
+
+		// changeLanguage();
+		changeTheme();
+    
+}
+
 function reset()
 {
-    $('#ip').val("");
-	$("#output").html(" ")
-	$("#memory").text("")
-	$("#time").text("")
-	changeLanguage();
-	changeTheme();
+	if(window.confirm("Are you sure you want to Reset the code ? WARNING: Your current code will be lost."))
+	{
+		$('#ip').val("");
+		$("#output").html(" ")
+		$("#memory").text("")
+		$("#time").text("")
+		changeLanguage();
+		changeTheme();
+	}
+}
+
+function check()
+{
+	var l1=$("#language").val()
+	if(window.confirm("Are you sure you want to change the language ? WARNING: Your current code will be lost."))
+	{
+		changeLanguage();
+	}
+	else
+	{
+		 $("#language").val(l1)
+	}
 }

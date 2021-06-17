@@ -198,6 +198,7 @@ function reset()
 		changeLanguage();
 		changeTheme();
 	}
+
 }
 
 function check()
@@ -209,6 +210,8 @@ function check()
 	}
 	else
 	{
+
+		 
 		 $("#language").val(l1)
 	}
 }

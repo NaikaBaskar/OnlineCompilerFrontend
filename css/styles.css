@@ -23,7 +23,13 @@ body
 	margin: 5px;
 	display: flex;
 	padding: 5px;
+	color: white;
+	font-size: 18px;
 	flex-direction: row;
+
+}
+.memtime p{
+
 }
 textarea {
     display: block;

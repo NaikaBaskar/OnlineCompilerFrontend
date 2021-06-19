@@ -201,6 +201,18 @@ function reset()
 
 }
 
+function save()
+{
+	var text=e.getValue();
+	var type=$("#language").val();
+	if(type=="python")
+		type="py"
+	var name=`Main.${type}`
+	var file=new Blob([text],{type:`text/${type}`})
+	var a=document.getElementById("savelink")
+	a.href=URL.createObjectURL(file)
+	a.download=name;
+}
 function check()
 {
 	var l1=$("#language").val()

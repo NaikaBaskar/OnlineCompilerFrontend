@@ -126,7 +126,7 @@ int main(){
       code,
     };
     try {
-     const { data } = await axios.post("http://localhost:5000/run", payload);
+     const { data } = await axios.post("https://online-compiler-backend.herokuapp.com/run", payload);
      $("#output").html(data.output)
      console.log(data)
     } catch ({response}) {
